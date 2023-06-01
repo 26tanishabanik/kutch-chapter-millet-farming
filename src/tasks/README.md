@@ -11,8 +11,7 @@ Note : Please Follow the below guidelines to create task folders
 
 | Task No| Task Name | Details |
 |-|-|-|
-|1|         |         |
-|2|         |         |
-|3|         |         |
-|4|         |         |
-|5|Political Rationale| The entire basis of the political rationale is to create a document upon which we could use as a basis to know if the direction of our current application is viable or not|
+|1| task-1-data-collection-on-types-of-millet-and-their-parameters         |  This task involves finding and selecting different types of millets and collecting their respective parameters      |
+|2| task-2-identity-satellites-and-sensors-to-use         |         This task involves identifying different satellites and their sensors using [Google Earth Engine](https://developers.google.com/earth-engine) as a source for fetching different millet parameters |
+|3| task-3-ai-algorithms         |  This task involves researching various AI algorithms and selecting the optimal one for building up the recommendation system       |
+|4| task-4-dashboard       |     This task involves developing the user facing dashboard for where users can visit and try out the recommendation engine  |
