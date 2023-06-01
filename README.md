@@ -1,7 +1,3 @@
-# chapter-project-repository-template
-Use this Repository as a template for creating Local Chapter Repositories
-
-
 # Precision Millet Farming: Leveraging Geospatial Technology to Optimize Crop Selection and Yield
 
 
