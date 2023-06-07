@@ -1,0 +1,37 @@
+ID;Types of Millets;Common Name;Category;Drought resistant;Flood Resistant;Min Temperature (ºC);Max Temperature (ºC);pH level of the soil Min;pH level of the soil Max;Soil type;Soil Salinity (dS/m) Min;Soil Salinity (dS/m) Max;Rainfall Required (cm) Min;Rainfall Required (cm) Max;Altitude range (m) Min;Altitude range (m) Max;Soil Temperature (ºC) Min;Soil Temperature (ºC) Max;"Soil moisture
+min";"Soil moisture
+max";Light Duration (hours) Min;Light Duration (hours) Max;Land usage for each crop (t/ha) Min;Land usage for each crop (t/ha) Max;Seeding Rate (kg/ha) Min;Seeding Rate (kg/ha) Max;Maturity time (days) Min;Maturity time (days) Max;Planting Depth (cm) Min;Planting Depth (cm) Max;Planting Geometry (cm x cm);Protein (g);Fat (g);Ash (g);Crude Fibre (g);Carbo- hydrates (g);Energy (kcal);Calcium (mg);Iron (mg);Thiamine (mg);Ribo- flavin (mg);Nia- cin (mg);Price (US$ / Kg)
+1;Pearl millet (Pennisetum glaucum);PEARL;Major;1;0;30;34;6;7;LC, SL;11;12;20;60;0;2700;;;20 %;80 %;;;1;2;;;60;70;;;20x30;10.96;5.43;1.37;11.49;61.78;348;27.35;6.42;0.25;0.2;0.86;19
+2;Finger millet (Eleusine coracana);FINGER;Major;1;0;26;29;4.5;7.5;L;11;12;50;60;0;2300;;;15 %;70 %;;;1;2;;;90;120;;;20x30;7.16;1.92;2.04;11.18;66.82;320.7;364;4.62;0.37;0.17;1.3;19
+3;Foxtail millet (Setaria italica);FOXTAIL;Minor;1;0;5;35;5.5;7;SL;0;6;30;70;0;200;5;35;20 %;75 %;;;1;2;;;75;90;;;20x30;12.3;4.3;0;8;60.9;331;31;2.8;0.59;0.11;3.2;24
+4;Proso millet (Panicum miliaceum) (Chena in India);PROSO;Major;1;0;20;30;5.5;6.5;SL, A;1.5;9.5;20;50;1200;3500;20;30;20 %;70 %;;;1;2;;;60;90;;;20x30;8.92;2.55;1.72;6.39;66.19;331.7;15.27;2.34;0.29;0.2;1.49;
+5;Little millet (Panicum sumatrense);LITTLE;Minor;0;1;25;30;5.5;6.5;C,L,S;0;2;75;80;0;2100;25;30;15 %;65 %;;;1;2;;;80;85;;;20x30;10.13;3.89;1.34;7.72;65.55;346.3;16.06;1.26;0.26;0.05;1.29;20
+6;Kodo millet (Paspalum scrobiculatum);KODO;Minor;1;0;25;27;5.5;6.5;F/M;0;2;80;120;0;1500;25;27;15 %;65 %;;;1;2;;;100;140;;;20x30;9.8;3.6;3.3;5.2;66.6;353;35;1.7;0.15;0.09;2;20
+7;Browntop millet (Brachiaria ramosa);BROWNTOP;Minor;0;1;20;30;5;6.5;SL;0;2;500;800;0;1500;25;35;20 %;70 %;12;14;1;2;5;10;60;90;2;3;20x30;11;1.5;1.8;2.3;78.3;356;10;9;0.17;0.15;0.7;
+8;Teff millet (Eragrostis tef);TEFF;Minor;1;0;15;35;6;7.5;SL;0;2;400;600;0;2500;15;30;15 %;65 %;12;14;1;2;5;10;90;120;1;2;20x30;13;2;2.4;8;73;367;180;9.8;0.47;0.35;4.2;13.27941176
+9;Japanese millet (Echinochloa esculenta);JAPANESE;Minor;0;1;19;33;5.5;6.5;HSL;3;5;400;600;0;2000;19;33;20 %;70 %;;;1;2;11.2;13.4;40;45;0.63;1.27;20x30;;;;;;;;;;;;7.48
+10;Indian barnyard millet (Echinochloa colona);INDIAN BARNYARD;Minor;0;1;15;33;4.6;7.4;HSL;3;5;400;600;0;2000;15;33;15 %;65 %;;;1;2;;;45;70;2;3;20x30;;;;;;;;;;;;
+11;African millet (Eleusine indica);AFRICAN;Minor;0;1;20;30;6;7.5;SLC;0;2;500;700;0;1500;20;30;15 %;65 %;12;14;1;2;8;12;80;120;2;3;20x30;7.7;1.6;2.8;1.6;78.3;352;30;3.9;0.33;0.17;1.4;
+12;Italian millet (Setaria italica);ITALIAN;Minor;1;0;25;35;6;7.5;SLC;0;2;400;600;0;2000;25;35;20 %;70 %;12;14;1;2;10;15;60;90;2;3;20x30;10.6;3.1;1.9;1.7;78.8;361;29;1.5;0.22;0.11;1.2;21.406
+13;Job's tears (Coix lacryma-jobi);JOB'S TEARS;Minor;1;0;25;35;6;7.5;SLC;0;2;500;800;0;2000;25;35;20 %;70 %;;14;1;3;10;15;90;120;2;3;20x30;;;;;;;;;;;;
+14;Guinea millet (Brachiaria deflexa);GUINEA;Minor;1;0;25;35;6;7;L;0;2;600;800;0;1500;25;35;20 %;70 %;12;14;1;3;10;15;70;90;2;3;20x30;;;;;;;;;;;;24
+15;Sorghum Millet (Jowar);SORGHUM;Major;1;0;7;30;5;8;S, L;4;6;40;100;0;3000;;;20 %;70 %;;;1;2;;;90;120;2;3;20x30;9.97;1.73;1.39;10.22;67.68;334.1;27.6;3.95;0.35;0.14;2.1;2.948
+16;Buckwheat Millet (Kuttu);BUCKWHEAT;Minor;1;0;18;21;4.8;6;S, A;0;2;35;100;0;1500;18;22;15 %;65 %;8;12;1;2;;20;70;90;4;6;30 x 10;;;;;;;;;;;;5.61
+17;Amaranth Millet (Rajgira);AMARANTH;Minor;1;0;20;30;6;7.5;SLC;0;2;500;700;0;2000;20;30;15 %;65 %;12;14;1;2;5;10;70;100;1;2;15x20;;;;;;;;;;;;21
+18;Barnyard millet (Echinochloa frumentacea);BARNYARD;Minor;1;0;15;33;4.6;7.4;HSL;3;5;400;600;0;2000;;;15 %;65 %;;;1;2;;;45;70;2;3;10x20;11.2;3.5;2.2;2.6;73.5;366;14;9.2;0.34;0.12;1.3;
+19;White fonio (Digitaria exilis);WHITE FONIO;Minor;0;1;25;30;4;6.5;S, A;0.5;4;60;120;70;400;;;15 %;65 %;;;0.7;1.5;;;60;150;2;3;10x20;;;;;;;;;;;;
+20;Black fonio (Digitaria iburua);BLACK FONIO;Minor;0;1;25;35;5.5;7.5;SLC;0;2;600;900;0;1500;25;35;15 %;65 %;12;14;0.5;1.5;5;10;70;90;1;2;10x20;;;;;;;;;;;;
+21;Ameranthus;CHAULAI;Minor;1;0;20;30;6;7.5;SLC;0;2;500;800;0;2000;20;30;20 %;70 %;12;14;1;3;5;10;70;120;1;2;20x30;;;;;;;;;;;;26.46
+22;Great millet (Sorghum bicolor);Great millet or Jowar;Major;1;0;25;30;6;7;SLC;0;2;70;160;0;1000;;;20 %;70 %;;;1;2;;;;;0;100;10x20;11.3;3.3;1.6;1.2;80.8;349;28;3.9;0.37;0.14;1.2;
+23;Barnyard grass millet (Echinochloa crus-galli);Barnyard grass millet or Jungle rice;Minor;0;1;20;30;6;7;SLC;0;2;600;900;0;2000;20;30;15 %;65 %;12;14;1;2;5;10;70;90;2;3;15x30;;;;;;;;;;;;
+24;Naked barley (Hordeum vulgare var. nudum);Naked barley;Major;1;0;10;25;6;7.5;SLC;0;2;400;600;0;3000;10;25;20 %;70 %;12;14;1;2;100;150;90;110;3;5;15x20;9.9;1.9;1.7;2.3;81.9;352;30;2.8;0.12;0.05;0.7;
+25;Panic millet (Panicum miliaceum subsp. ruderale);Panic millet;Major;1;0;20;30;6;7.5;SLC;0;2;400;600;0;2000;20;30;20 %;70 %;12;14;1;2;5;10;70;90;2;3;15-30;;;;;;;;;;;;
+26;Sorghum (Sorghum bicolor);Sorghum or Jowar;Major;1;0;25;35;6;7.5;SLC;3;5;400;800;0;2000;12;34;20 %;70 %;12;14;2;5;10;20;115;140;2;4;20x30;10.6;3.1;1.9;1.7;78.8;361;29;1.5;0.22;0.11;1.2;
+27;Sawa millet (Echinochloa stagnina);Sawa millet;Minor;0;1;25;35;6;7.5;SLC;0;2;600;900;0;1500;25;35;15 %;65 %;12;14;1;2;5;10;80;100;2;3;10x20;;;;;;;;;;;;
+28;Barnyard Grass Millet (Echinochloa crus-galli);Barnyard grass millet or Jungle rice;Minor;0;1;20;30;5.5;7;SLC;0;2;600;900;0;2000;20;30;15 %;65 %;12;14;1;2;5;10;60;75;2;3;20x30;;;;;;;;;;;;
+29;Japanese Barnyard Millet (Echinochloa frumentacea);Japanese barnyard millet or Sanwa millet;Minor;0;1;25;35;5.5;7;SLC;3;5;600;900;0;2000;25;35;15 %;65 %;12;14;1;2;5;10;70;90;2;3;20x30;11.2;3.5;2.2;2.6;73.5;366;14;9.2;0.34;0.12;1.3;
+30;Himalayan Foxtail Millet (Setaria italica subsp. himalayensis);Himalayan foxtail millet or Kakum;Minor;0;1;20;30;6;7.5;SLC;3;5;600;800;1000;2500;20;30;20 %;70 %;12;14;1;2;5;10;50;75;2;3;15x20;;;;;;;;;;;;
+31;Italian Barnyard Millet (Echinochloa crus-galli);Italian barnyard millet or Jungle rice;Minor;0;1;25;35;5.5;7;SLC;3;5;600;900;0;2000;25;35;15 %;65 %;12;14;1;2;5;10;70;90;2;3;40x60;;;;;;;;;;;;
+32;Foxtail Barnyard Millet (Echinochloa frumentacea);Foxtail barnyard millet or Kakum;Minor;0;1;25;35;5.5;7;SLC;3;5;600;900;0;2000;25;35;15 %;65 %;12;14;1;2;5;10;70;90;2;3;20x30;11.2;3.5;2.2;2.6;73.5;366;14;9.2;0.34;0.12;1.3;
+33;Siberian Millet (Panicum miliaceum subsp. sibiricum);Siberian millet;Minor;1;0;20;30;6;7;SLC;0;2;400;600;0;2000;20;30;20 %;70 %;12;14;1;2;5;10;70;90;2;3;20x30;;;;;;;;;;;;
+34;Italian Foxtail Millet (Setaria italica subsp. pycnocoma);Italian foxtail millet;Minor;0;1;25;35;6;7.5;SLC;0;2;600;800;1000;2500;25;35;20 %;70 %;12;14;1;2;5;10;60;75;2;3;15x20;;;;;;;;;;;;
