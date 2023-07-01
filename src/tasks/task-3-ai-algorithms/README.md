@@ -13,7 +13,7 @@ This task involves researching various AI algorithms and selecting the optimal o
 
 | Collaborator Name | Details | Results | Notebook Link |
 | ------ | ------ |------ |------ |
-| Chancy Shah | Created the augmented dataset and used Random Forest Classifier | ![img|50x100](https://github.com/OmdenaAI/kutch-chapter-millet-farming/blob/main/src/tasks/task-3-ai-algorithms/Chancy_results.png) | Kutch Chapter Millet ML-Model
+| Chancy Shah | Created the augmented dataset and used Random Forest Classifier | ![](https://github.com/OmdenaAI/kutch-chapter-millet-farming/blob/main/src/tasks/task-3-ai-algorithms/Chancy_results.png) | Kutch Chapter Millet ML-Model
 | Archisha Srivastava | Used Following Algorithms | ![](https://github.com/OmdenaAI/kutch-chapter-millet-farming/blob/main/src/tasks/task-3-ai-algorithms/Archisha_results.png ) |https://colab.research.google.com/drive/11RsDEGpWj7w1hmq4UUTnDeMMFSEwr38t?usp=sharing |
 |  Soumya Ranjan Das | Used the Synthetic Data Vault (SDV) package to create and validate an augmented millet dataset (approximately 100,000 data points) using their variational autoencoder-based neural network.Performed exploratory data analysis (EDA) and feature selection using PCA. Random Forest, XGBoost, and CatBoost classifiers to the augmented data without hyperparameter tuning | ![](https://github.com/OmdenaAI/kutch-chapter-millet-farming/blob/main/src/tasks/task-3-ai-algorithms/Soumya_RF_results.png)| https://drive.google.com/file/d/14GMkLYjNk0V9kzKNy6a2bKcLIoVRc0Zi/view?usp=sharing |
 | Raju kunchala  |  | |
