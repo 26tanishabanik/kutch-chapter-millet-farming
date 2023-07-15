@@ -4,7 +4,6 @@ from datetime import date
 import os
 import glob as glob
 from project_utils.page_layout_helper import set_page_settings, get_page_title, main_header
-#
 
 def active_contributors():
   ACTIVE_CONTRIBUTORS_PAGE_CHAPTERLEAD='''

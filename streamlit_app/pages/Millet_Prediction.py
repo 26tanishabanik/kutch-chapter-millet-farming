@@ -12,15 +12,19 @@ from datetime import date
 from dateutil import parser
 import calendar
 import pickle
+from PIL import Image
 
 def get_start_end_date(month_text):
   date_time = f'{date.today().year}-{month_text}-01'
   selected_date = parser.parse(date_time)
   selected_month = selected_date.month
-  selected_year = selected_date.year-1
+  selected_year = 2023
+  selected_year_end = selected_year - 2
   last_day_month = calendar.monthrange(selected_year, selected_month)[1]
-  start_date =  f'{selected_year}-{selected_month}-{selected_date.day}'
+  start_date =  f'{selected_year_end}-{selected_month}-{selected_date.day}'
   end_date = f'{selected_year}-{selected_month}-{last_day_month}'
+  print(start_date)
+  print(end_date)
   return start_date, end_date
 
 
@@ -69,7 +73,7 @@ data = {
 
 @st.cache_resource()
 def model_load():
-  filename = './Model/millet-model.pkl'
+  filename = 'D:\Omdena-Kutch\Millet_Farming\kutch-chapter-millet-farming-main\millet-model.pkl'
   model = pickle.load(open(os.path.abspath(filename), 'rb'))
   return model
   
@@ -77,7 +81,25 @@ def model_predict(start_date, end_date, roi):
   model = model_load()
   Soil_type_C_L_S=Soil_type_F_M=Soil_type_HSL=Soil_type_LC_SL=Soil_type_S_A=Soil_type_S_L=Soil_type_SL=Soil_type_SL_A=Soil_type_SLC=0.0
   Soil_type_L=1.0
-  temperature_min, temperature_max, pH_min, pH_max, rainfall_min, rainfall_max, windspeed_min, windspeed_max, soil_moisture_min, soil_moisture_max, humidity_min, humidity_max, elevation_min, elevation_max, canopy_cover_mean, soil_salinity_min_value, soil_salinity_max_value, soil_salinity_average_value=fetch_satellite_data(start_date, end_date, roi)
+  temperature_min, temperature_max, pH_min, pH_max, rainfall_min, rainfall_max, windspeed_min, windspeed_max, soil_moisture_min, soil_moisture_max, humidity_min, humidity_max, elevation_min, elevation_max, soil_salinity_min_value, soil_salinity_max_value =fetch_satellite_data(start_date, end_date, roi)
+  print("temperature_min: ",temperature_min)
+  print("temperature_max: ",temperature_max)
+  print("pH_min :", pH_min)
+  print("pH_max", pH_max)
+  print("rainfall_min:", rainfall_min)
+  print("rainfall_max :", rainfall_max)
+  print("windspeed_min:", windspeed_min)
+  print("windspeed_max:", windspeed_max)
+  print("soil_moisture_min:",soil_moisture_min)
+  print("soil_moisture_max:", soil_moisture_max)
+  print("humidity_min:", humidity_min)
+  print("humidity_max:", humidity_max)
+  print("elevation_min", elevation_min)
+  print("elevation_max :", elevation_max)
+  print("soil_salinity_min_value :", soil_salinity_min_value)
+  print("soil_salinity_max_value :", soil_salinity_max_value)
+
+  
   #new_data = pd.DataFrame([Soil_type_C_L_S, Soil_type_F_M, Soil_type_HSL, Soil_type_L, Soil_type_LC_SL, Soil_type_S_A, Soil_type_S_L, Soil_type_SL, Soil_type_SL_A, Soil_type_SLC, 1, 1, temperature_min, temperature_max, pH_min, pH_max, soil_salinity_min_value, soil_salinity_max_value, rainfall_min, rainfall_max, elevation_min, elevation_max, 0, 31.75, soil_moisture_min, soil_moisture_max, 11.81, 13.90, 1.00, 2.15, 10.65, 17.84, 71.21, 96.81, 1.84, 6.47, 18.54, 27.65, 10.40, 2.96, 1.87, 5.10, 72.12, 350.635, 52.60, 4.88, 0.30, 0.14, 1.57, 17.24])  
   new_data = pd.DataFrame({
     'Soil type_C,L,S':[Soil_type_C_L_S], 
@@ -106,7 +128,7 @@ def model_predict(start_date, end_date, roi):
     'Soil Temperature (ºC) Max': [31.75],
     'Soil moisture\nmin': [soil_moisture_min],#[20.5],
     'Soil moisture\nmax': [soil_moisture_max],#[68.08],
-    'Light Duration (hours) Min': [11.81],
+    'Light Duration (hours) Min': ["11.81"],
     'Light Duration (hours) Max': [13.90],
     'Land usage for each crop (t/ha) Min': [1.00],
     'Land usage for each crop (t/ha) Max': [2.15],
@@ -168,7 +190,9 @@ def main():
             st.subheader(f'**Name of Millet :** {row["Name of Millet"]}')
             col1, col2, col3 = st.columns(3)
             with col1:
-              st.image(f'images/{row["Millet Pic"]}',width=200)
+              image = Image.open(f'D:/Omdena-Kutch/Millet_Farming/kutch-chapter-millet-farming-main/streamlit_app/images/{row["Millet Pic"]}')
+              st.image(image ,width=200)
+              print(f'D:/Omdena-Kutch/Millet_Farming/kutch-chapter-millet-farming-main/streamlit_app/images/{row["Millet Pic"]}')
 
             with col2:
               st.markdown(f'**Scientific Name :** {row["Scientific Name"]}', unsafe_allow_html=True)
