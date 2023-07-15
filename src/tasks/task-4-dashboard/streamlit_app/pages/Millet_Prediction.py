@@ -73,7 +73,7 @@ data = {
 
 @st.cache_resource()
 def model_load():
-  filename = 'OmdenaAI/kutch-chapter-millet-farming/src/tasks/task-4-dashboard/streamlit_app/Model/millet-model.pkl'
+  filename = 'src/tasks/task-4-dashboard/streamlit_app/Model/millet-model.pkl'
   model = pickle.load(open(os.path.abspath(filename), 'rb'))
   return model
   
