@@ -133,12 +133,14 @@ def get_soil_salinity(start_date, end_date, roi):
 #client_x509_cert_url = "xxx"
 
 def fetch_satellite_data(start_date, end_date, aoi_roi):
-  service_account_keys = st.secrets["ee_keys"]
-  credentials = service_account.Credentials.from_service_account_info(service_account_keys, scopes=oauth.SCOPES)
-  ee.Initialize(credentials)
-  ee.Authenticate()
+  #service_account_keys = st.secrets["ee_keys"]
+  #credentials = service_account.Credentials.from_service_account_info(service_account_keys, scopes=oauth.SCOPES)
+  #ee.Authenticate()
+  ee.Initialize()
   poly = shapely.geometry.Polygon(aoi_roi[0])
   roi = ee.Geometry.Rectangle([poly.bounds[0],poly.bounds[1],poly.bounds[2],poly.bounds[3]])
+  start_dt =  '2013-01-01'
+  end_dt = '2022-12-31'
   temperature_min, temperature_max = get_temperature(start_dt, end_dt, roi)
   pH_min, pH_max = get_pH(start_dt, end_dt, roi)
   rainfall_min, rainfall_max = get_rainfall(start_dt, end_dt, roi)
