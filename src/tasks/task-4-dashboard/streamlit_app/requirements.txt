@@ -1,0 +1,8 @@
+
+streamlit
+streamlit_folium
+scikit-learn==1.2.1
+rasterio
+shapely
+geemap
+Pillow
