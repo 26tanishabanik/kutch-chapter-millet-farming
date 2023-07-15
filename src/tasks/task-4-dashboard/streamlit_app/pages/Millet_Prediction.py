@@ -73,7 +73,7 @@ data = {
 
 @st.cache_resource()
 def model_load():
-  filename = 'D:\Omdena-Kutch\Millet_Farming\kutch-chapter-millet-farming-main\millet-model.pkl'
+  filename = 'src/tasks/task-4-dashboard/streamlit_app/Model/millet-model.pkl'
   model = pickle.load(open(os.path.abspath(filename), 'rb'))
   return model
   
