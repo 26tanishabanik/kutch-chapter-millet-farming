@@ -105,7 +105,7 @@ def get_elevation(roi):
 
 def get_soil_salinity(start_date, end_date, roi):
   # Open the GeoTIFF file
-  file_path = 'D:/Omdena-Kutch/Millet_Farming/kutch-chapter-millet-farming-main/Soil Salinity.tif'
+  file_path = 'OmdenaAI/kutch-chapter-millet-farming/Soil Salinity.tif'
   dataset = rasterio.open(os.path.abspath((file_path)))
   # Define the bounding box coordinates of the polygon
   poly = Polygon(roi)
