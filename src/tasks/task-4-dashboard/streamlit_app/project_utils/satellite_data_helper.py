@@ -143,7 +143,7 @@ def fetch_satellite_data(start_date, end_date, aoi_roi):
   #credentials = service_account.Credentials.from_service_account_info(service_account_keys, scopes=oauth.SCOPES)
   #ee.Initialize(credentials)
   #ee.Authenticate()
-  #ee.Initialize()
+  ee.Initialize()
   poly = shapely.geometry.Polygon(aoi_roi[0])
   roi = ee.Geometry.Rectangle([poly.bounds[0],poly.bounds[1],poly.bounds[2],poly.bounds[3]])
   temperature_min, temperature_max = get_temperature(start_date, end_date, roi)
