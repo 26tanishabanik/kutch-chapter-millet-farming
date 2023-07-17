@@ -8,6 +8,7 @@ import ee
 
 ee.Authenticate()
 ee.Initialize()
+
 def active_contributors():
   ACTIVE_CONTRIBUTORS_PAGE_CHAPTERLEAD='''
 | Chapter Name | Lead Name |
