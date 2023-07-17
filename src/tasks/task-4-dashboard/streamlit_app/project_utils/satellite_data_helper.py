@@ -15,7 +15,6 @@ import json
 # Path to the JSON file containing the service account key
 json_keyfile_path = "path/to/your/json/keyfile.json"
 
-from ee.oauthinfo import OAuthInfo
 def get_temperature(start_date, end_date, roi):
   start_date='2013-03-18'
   col = ee.ImageCollection('LANDSAT/LC08/C02/T1_L2').filterDate(start_date, end_date).filterBounds(roi).mean()
