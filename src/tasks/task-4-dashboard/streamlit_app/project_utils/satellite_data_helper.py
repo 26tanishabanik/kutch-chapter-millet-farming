@@ -156,7 +156,9 @@ def fetch_satellite_data(start_date, end_date, aoi_roi):
   # Load the service account key from the JSON file
   with open(json_keyfile_path) as f:
     service_account_keys = json.load(f)
-
+    
+  print(service_account_keys) 
+  
   # Initialize Earth Engine with the service account key
   ee.Initialize(ee.ServiceAccountCredentials(service_account_keys))
 
