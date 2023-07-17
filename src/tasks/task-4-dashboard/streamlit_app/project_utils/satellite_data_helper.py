@@ -166,13 +166,11 @@ def fetch_satellite_data(start_date, end_date, aoi_roi):
     }
     refresh_token = None
   try:
-        response = urllib2.urlopen('https://accounts.google.com/o/oauth2/token',
-                            urllib.urlencode(token_request_params)).read()
-        tokens = json.loads(response)
-        refresh_token = tokens['refresh_token']
+    response = urllib2.urlopen('https://accounts.google.com/o/oauth2/token', urllib.urlencode(token_request_params)).read()
+    tokens = json.loads(response)
+    refresh_token = tokens['refresh_token']
   except urllib2.HTTPError, e:
-        raise Exception('Problem requesting tokens.  Please try again.  %s %s' %
-                    (e, e.read()))
+    raise Exception('Problem requesting tokens.  Please try again.  %s %s' % (e, e.read()))
 
     ### Write refresh token to filesystem for later use
   credentials_path = OAuthInfo.credentials_path()
@@ -193,7 +191,6 @@ def fetch_satellite_data(start_date, end_date, aoi_roi):
     print '\nSuccessfully authenticated to Earth Engine!'
   except:
     print '\nOops. Something went wrong!'
-
   
   poly = shapely.geometry.Polygon(aoi_roi[0])
   roi = ee.Geometry.Rectangle([poly.bounds[0],poly.bounds[1],poly.bounds[2],poly.bounds[3]])
