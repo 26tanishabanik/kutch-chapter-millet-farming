@@ -6,3 +6,4 @@ rasterio
 shapely
 geemap
 Pillow
+earthengine-api==0.1.329
