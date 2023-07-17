@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "ee-chancy",
+  "private_key_id": "4589e4712730d63b599752e77de6780ac8596768",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCXymXrB8Upd+KO\nPErnca1Z6GOjRmg9XfdUteMXvlKVulvtQMq6Th3QT+NA4JSAgTeX6BM5LmPLH+mK\niAxLJqZsE7W0AQKSLrDDbUxcIqOIUDLFlHLJdSiIpCy0UHMk/Ubu6k+qWBoHOH67\nYJ1dNqVYj0q4jznj56tR6G2Fzl5E/vTJuuKROqFrBGNPMsJ2tDMc9l/CWWCRlmR2\ncwyAIaYcntIY3cAvLdrdBZamOM3lwXQvpPb2bELmErZS0uevK0oelMf8hYizBSeo\nqgB2MlGAxHrdth2d2lc4sCY0xWsbzbKJADZnlEOTal9nfREFMXl5sCbaxVQfhDic\nCtsG9OrNAgMBAAECggEAIKKVEBe/Fb/fV3pyFlnUDhkPVxr7rXoHA9EJbuDuK6AC\nRLvh+nVyJogOkbPXadueYsw0Wd51+UW2tiCzF/NK48DHF9kBvwFH4vScbtDJvTSU\n/fMBTPwiB2LY87m6T/Eer550G2lOy0+ju9C1dMWbfjNsusqchToZlQY2igbJMOcV\nRtAnH01SSLvpNjWeBmibHu3DHxORQupB1pj2uTTsiEAXpN8xcqw6AhU8zM3tfmAI\nlTvOR54tRIW2zD49RHkRiTQ9L0bW/GWBdoRfsTk7F71GEBgUd5GnLon8QstqLfom\ni1SQkJBHZA+VuDb+ZU2TG2alaKADRfgn0OEWPFkGUQKBgQDPHcYs04CLRImP6Bgz\ngk/4YZCqkgJ8xRztsusrRPMfBycDvSX8GznjYS3hga7AXunVOoPksmn1XrwuG+/g\nLftCh1l/RtSnKPijdxh9Q/jqh5Lv/v/FENvD+5HnT1JXRdu32X3BmcQmlXK+HR+/\nGoKJnnyOXiH+YtlcYaikT+2yyQKBgQC7ncbfX+E12AaRadUD3fOKSk1MO9F+BTkE\nNyqUdUNVx/W7dsOmuG+uJqf9oiQ22qJC8IHjyujAUj3YPMEnhbk8e5MQ59W9WlSA\nagnRp3KCKas8tBGaoETPItNcFm2QWpqbjo84rHodVMHwDbcIa7JfU/9tzf85CAyC\ncJl6wZ2V5QKBgQCZd5Vth7aa+0j3EeJE4I1DHYAlc5VWQHRkCQxKfoereRBGq/Qm\nb0IgotRtYTtMncekUPyEDFOJFg5YGClRMqEYNdRyA9j0l95MuaWyxBgAKD8PiCKb\nMhe1i4YcIGGB+2iIPSb6umZmtJxWFJx+bTVGpeHjWArWRQaMdmyQfA1ESQKBgQCq\n4XKgQyjRrNeWnCkLI53NKA2tUJJnUIR05XYfz4or2Dtlqi9ba4M0wDqj1YlceNfv\nVjVH76j8eiugBv36bF6hyv/RFwdjNqHecDZPQU8XZLJ1UKD0D+N8MgEGT9ss7okB\nA+BIwzdZ/bfCWAuMXOMS1mPAdC5wmHckW0A/QZexTQKBgQCqd5NUdbXjucSuDf5+\nXhE/8h4omcynTSRoCMJqvhfxgpKh0cEjtutHbc1jZfe/9WZ54klhsHaALz6N7Y1m\nMwEyoOtMK8FwIXkDqVt0oW/LKRq5+BQl1VK5EZ5AbijyDgM40ffovEWTCHRpRw48\nXc3LOZF6cSMobnStw5yxugIxuw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "millet-mapping@ee-chancy.iam.gserviceaccount.com",
+  "client_id": "118118561460958107922",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/millet-mapping%40ee-chancy.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
