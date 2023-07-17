@@ -7,8 +7,3 @@ shapely
 geemap
 Pillow
 google-api-python-client
-errno
-json
-os
-urllib
-urllib2
