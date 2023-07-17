@@ -10,8 +10,6 @@ import shapely
 from shapely.geometry import Polygon,box
 import streamlit as st
 import json
-from google.oauth2 import service_account
-import ee
 
 # Path to the JSON file containing the service account key
 json_keyfile_path = "path/to/your/json/keyfile.json"
