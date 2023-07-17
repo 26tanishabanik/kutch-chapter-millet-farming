@@ -145,26 +145,11 @@ def get_soil_salinity(start_date, end_date, roi):
 
 
 def fetch_satellite_data(start_date, end_date, aoi_roi):
-  #service_account_keys = st.secrets["ee_keys"]
-  #credentials = service_account.Credentials.from_service_account_info(service_account_keys, scopes=oauth.SCOPES)
-  #ee.Initialize(credentials)
-  #ee.Authenticate()
-  
-  # Path to the JSON file containing the service account key
-  json_keyfile_path = "src/tasks/task-4-dashboard/streamlit_app/ee-chancy-4589e4712730.json"
-
-  # Load the service account key from the JSON file
-  with open(json_keyfile_path) as f:
-    service_account_keys = json.load(f)
-    
-  print(service_account_keys) 
-  
-  # Initialize Earth Engine with the service account key
-  ee.Initialize(ee.ServiceAccountCredentials(service_account_keys))
-
-  # Authenticate the session (optional if already authenticated during initialization)
+  service_account_keys = st.secrets["ee_keys"]
+  credentials = service_account.Credentials.from_service_account_info(service_account_keys, scopes=oauth.SCOPES)
+  ee.Initialize(credentials)
   ee.Authenticate()
-
+  
   poly = shapely.geometry.Polygon(aoi_roi[0])
   roi = ee.Geometry.Rectangle([poly.bounds[0],poly.bounds[1],poly.bounds[2],poly.bounds[3]])
   temperature_min, temperature_max = get_temperature(start_date, end_date, roi)
