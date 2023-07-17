@@ -7,11 +7,6 @@ from project_utils.page_layout_helper import set_page_settings, get_page_title, 
 import ee
 import geemap
 
-
-ee.Authenticate()
-ee.Initialize()
-m = geemap.Map()
-
 def active_contributors():
   ACTIVE_CONTRIBUTORS_PAGE_CHAPTERLEAD='''
 | Chapter Name | Lead Name |
