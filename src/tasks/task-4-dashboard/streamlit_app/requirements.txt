@@ -6,3 +6,4 @@ rasterio
 shapely
 geemap
 Pillow
+google-api-python-client
