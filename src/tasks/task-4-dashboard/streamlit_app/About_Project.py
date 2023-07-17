@@ -5,6 +5,10 @@ import os
 import glob as glob
 from project_utils.page_layout_helper import set_page_settings, get_page_title, main_header
 import ee
+import geemap
+
+ee.Authenticate()
+ee.Initialize()
 
 ee.Authenticate()
 ee.Initialize()
