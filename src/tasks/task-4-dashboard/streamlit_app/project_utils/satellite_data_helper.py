@@ -10,7 +10,7 @@ import shapely
 from shapely.geometry import Polygon,box
 import streamlit as st
 import json
-from ee.oauthinfo import OAuthInfo
+#from ee.oauthinfo import OAuthInfo
 
 # Path to the JSON file containing the service account key
 json_keyfile_path = "path/to/your/json/keyfile.json"
@@ -150,6 +150,7 @@ def fetch_satellite_data(start_date, end_date, aoi_roi):
   #credentials = service_account.Credentials.from_service_account_info(service_account_keys, scopes=oauth.SCOPES)
   #ee.Initialize(credentials)
   #ee.Authenticate()
+  
   # Path to the JSON file containing the service account key
   json_keyfile_path = "src/tasks/task-4-dashboard/streamlit_app/ee-chancy-4589e4712730.json"
 
