@@ -1,5 +1,5 @@
 import ee
-from google.oauth2 import service_account
+#from google.oauth2 import service_account
 from ee import oauth
 import geemap
 import numpy as np
@@ -155,15 +155,13 @@ def fetch_satellite_data(start_date, end_date, aoi_roi):
   # Load the service account key from the JSON file
   with open(json_keyfile_path) as f:
     service_account_keys = json.load(f)
-  # Create credentials using the service account key
-  credentials = service_account.Credentials.from_service_account_info(service_account_keys, scopes=ee.oauth.SCOPES)
 
-  # Initialize Earth Engine with the credentials
-  ee.Initialize(credentials)
+  # Initialize Earth Engine with the service account key
+  ee.Initialize(ee.ServiceAccountCredentials(service_account_keys))
 
-  # Authenticate the session
+  # Authenticate the session (optional if already authenticated during initialization)
   ee.Authenticate()
-  
+
   poly = shapely.geometry.Polygon(aoi_roi[0])
   roi = ee.Geometry.Rectangle([poly.bounds[0],poly.bounds[1],poly.bounds[2],poly.bounds[3]])
   temperature_min, temperature_max = get_temperature(start_date, end_date, roi)
