@@ -9,12 +9,12 @@ from rasterio.mask import mask
 import shapely
 from shapely.geometry import Polygon,box
 import streamlit as st
-import ee
-import errno
 import json
-import os
-import urllib
-import urllib2
+from google.oauth2 import service_account
+import ee
+
+# Path to the JSON file containing the service account key
+json_keyfile_path = "path/to/your/json/keyfile.json"
 
 from ee.oauthinfo import OAuthInfo
 def get_temperature(start_date, end_date, roi):
@@ -145,52 +145,26 @@ def get_soil_salinity(start_date, end_date, roi):
 #auth_provider_x509_cert_url = "xxx"
 #client_x509_cert_url = "xxx"
 
+
 def fetch_satellite_data(start_date, end_date, aoi_roi):
   #service_account_keys = st.secrets["ee_keys"]
   #credentials = service_account.Credentials.from_service_account_info(service_account_keys, scopes=oauth.SCOPES)
   #ee.Initialize(credentials)
   #ee.Authenticate()
-  #ee.Initialize()
-  authentication_code ='1//0g2gL4KQ9Il1NCgYIARAAGBASNwF-L9IrnJEu6KTryw1kAKWh-htJe0F7hd6W98UNUlSiNZ8nOSqpKK5zLUu0ODeseRQZaNR6EmQ'
-  # Try to initialize Earth Engine, and if unsuccessful try to get a credentials file
-  # using the authentication code provided above.
-  try:
-    ee.Initialize()
-  except:
-    token_request_params = {
-      'code': authentication_code,
-      'client_id': OAuthInfo.CLIENT_ID,
-      'client_secret': OAuthInfo.CLIENT_SECRET,
-      'redirect_uri': 'urn:ietf:wg:oauth:2.0:oob',
-      'grant_type': 'authorization_code'
-    }
-    refresh_token = None
-  try:
-    response = urllib2.urlopen('https://accounts.google.com/o/oauth2/token', urllib.urlencode(token_request_params)).read()
-    tokens = json.loads(response)
-    refresh_token = tokens['refresh_token']
-  except urllib2.HTTPError, e:
-    raise Exception('Problem requesting tokens.  Please try again.  %s %s' % (e, e.read()))
+  # Path to the JSON file containing the service account key
+  json_keyfile_path = "src/tasks/task-4-dashboard/streamlit_app/ee-chancy-4589e4712730.json"
 
-    ### Write refresh token to filesystem for later use
-  credentials_path = OAuthInfo.credentials_path()
-  dirname = os.path.dirname(credentials_path)
-  try:
-        os.makedirs(dirname)
-  except OSError, e:
-        if e.errno != errno.EEXIST:
-            raise Exception('Error creating %s: %s' % (dirname, e))
+  # Load the service account key from the JSON file
+  with open(json_keyfile_path) as f:
+    service_account_keys = json.load(f)
+  # Create credentials using the service account key
+  credentials = service_account.Credentials.from_service_account_info(service_account_keys, scopes=ee.oauth.SCOPES)
 
-  json.dump({'refresh_token': refresh_token}, open(credentials_path, 'w'))
+  # Initialize Earth Engine with the credentials
+  ee.Initialize(credentials)
 
-  print '\nSuccessfully saved authorization to %s' % credentials_path
-    
-# Try to authenticate to Earth Engine.
-  try:
-    ee.Initialize()
-    print '\nSuccessfully authenticated to Earth Engine!'
-  except:
-    print '\nOops. Something went wrong!'
+  # Authenticate the session
+  ee.Authenticate()
   
   poly = shapely.geometry.Polygon(aoi_roi[0])
   roi = ee.Geometry.Rectangle([poly.bounds[0],poly.bounds[1],poly.bounds[2],poly.bounds[3]])
