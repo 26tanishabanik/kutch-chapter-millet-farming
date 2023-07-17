@@ -1,4 +1,4 @@
-earthengine-api==0.1.293
+earthengine-api==0.1.256
 streamlit
 streamlit_folium
 scikit-learn==1.2.1
