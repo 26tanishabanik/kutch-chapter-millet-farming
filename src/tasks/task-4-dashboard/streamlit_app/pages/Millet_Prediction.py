@@ -160,7 +160,7 @@ def model_predict(start_date, end_date, roi):
 def main():
   main_header()
   df = pd.DataFrame(data)
-  st.write("Specify an area on the map to define the region for millet prediction.")
+  st.write("Select a small area using on the rectangle icon on the map to define the region for millet prediction.")
   with st.form("my_form"):
     m = folium.Map()
     Draw(export = False, draw_options={ "polygon" : False, "polyline" : False, "circle" : False, "marker" : False, "circlemarker" : False},edit_options=False).add_to(m)
