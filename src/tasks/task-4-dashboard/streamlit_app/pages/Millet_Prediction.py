@@ -183,6 +183,7 @@ def main():
     # Add base maps to the layer control
     for base_map in base_maps:
       base_map.add_to(layer_control)
+      
     option = st.selectbox('Please select the month of sowing : ', ('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'))
 
     submitted = st.form_submit_button("Submit")
