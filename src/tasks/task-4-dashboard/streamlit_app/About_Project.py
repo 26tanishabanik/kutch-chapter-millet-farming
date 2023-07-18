@@ -22,7 +22,7 @@ def active_contributors():
   st.markdown('• <a href=#>Janani Selvaraj</a>', unsafe_allow_html=True)
   st.markdown('• <a href=#>Aakanksha</a>', unsafe_allow_html=True)
   st.markdown('• <a href="http://www.linkedin.com/in/tsilavo-r">Tsilavo RAKOTO</a>', unsafe_allow_html=True)
-  st.markdown('• <a href=#>Tanishq kolhatkar</a>', unsafe_allow_html=True)
+  st.markdown('• <a href="https://www.linkedin.com/in/tanishq-kolhatkar-4168a0209">Tanishq kolhatkar</a>', unsafe_allow_html=True)
   st.markdown('• <a href="https://www.linkedin.com/mwlite/in/mallikarjun-jamadarkhani-950929101">Mallikarjun Jamadarkhani</a>', unsafe_allow_html=True)
   st.markdown('• <a href=#>Pratik Dhungana</a>', unsafe_allow_html=True)
   st.subheader('PROJECT MANAGER')
