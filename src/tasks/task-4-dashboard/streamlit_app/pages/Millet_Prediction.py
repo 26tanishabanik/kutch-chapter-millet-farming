@@ -169,7 +169,7 @@ def predict_with_progress_bar(model, new_data):
 
     return prediction_results
 
-prediction_result = predict_with_progress_bar(model, new_data)
+prediction_result = predict_with_progress_bar(new_data)
 
 def main():
   main_header()
