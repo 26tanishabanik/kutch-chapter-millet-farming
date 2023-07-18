@@ -154,21 +154,8 @@ def model_predict(start_date, end_date, roi):
     'Nia- cin (mg)': [1.57],
     'Price (US$ / Kg)': [17.24]
 })
-  #prediction_result=model.predict(new_data)
-  #return prediction_result
-  prediction_result = predict_with_progress_bar(new_data)
-
-def predict_with_progress_bar(new_data):
-    prediction_results = []
-    total_iterations = len(new_data)
-
-    with tqdm(total=total_iterations, desc="Predicting") as pbar:
-        for data in new_data:
-            prediction = model.predict(data)
-            prediction_results.append(prediction)
-            pbar.update(1)
-
-    return prediction_results
+  prediction_result=model.predict(new_data)
+  return prediction_result
 
 def main():
   main_header()
@@ -196,7 +183,23 @@ def main():
         #st.write(str(polygon_coordinates["last_active_drawing"]["geometry"]["coordinates"]))
         #st.write(help(polygon_coordinates))
         #st.table(df)
-        prediction_result=model_predict(start_date, end_date, polygon_coordinates["last_active_drawing"]["geometry"]["coordinates"])[0]
+        #prediction_result=model_predict(start_date, end_date, polygon_coordinates["last_active_drawing"]["geometry"]["coordinates"])[0]
+        total_iterations = 10
+
+        # Show the progress bar
+        with st.empty():
+            progress_bar = st.progress(0)
+            for i in tqdm(range(total_iterations), desc="Progress"):
+                # Simulating some time-consuming operation
+                time.sleep(0.5)
+
+                # Check if prediction result is available
+                if i == total_iterations - 1:
+                  prediction_result=model_predict(start_date, end_date, polygon_coordinates["last_active_drawing"]["geometry"]["coordinates"])[0]
+                  break
+
+                progress_bar.progress((i + 1) / total_iterations)
+
         #st.write(prediction_result)
         df_new=df.loc[df["Full Name of Millet"]==prediction_result]       
         for index,row in df_new.iterrows():
