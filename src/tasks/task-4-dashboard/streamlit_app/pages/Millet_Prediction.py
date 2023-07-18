@@ -193,7 +193,7 @@ def main():
         prediction_result = None
         for i in tqdm(range(100), desc="Progress", leave=False):
             # Simulating some time-consuming operation
-            time.sleep(0.1)
+            time.sleep(0.5)
 
             # Check if prediction result is available
             if i == 50:
