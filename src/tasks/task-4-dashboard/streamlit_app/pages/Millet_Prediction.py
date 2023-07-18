@@ -162,31 +162,12 @@ def main():
   df = pd.DataFrame(data)
 
   with st.form("my_form"):
-    m = folium.Map(width=800, height=600)
-    # Add base maps using TileLayer
-    folium.TileLayer('OpenStreetMap').add_to(m)  # Default base map
+    m = folium.Map()
 
-    # Add additional base maps
-    folium.TileLayer('CartoDB positron').add_to(m)
-    folium.TileLayer('CartoDB dark_matter').add_to(m)
-    folium.TileLayer('Stamen Terrain').add_to(m)
-    folium.TileLayer('Stamen Toner').add_to(m)
-    folium.TileLayer('Stamen Watercolor').add_to(m)
-
-    # Define Google Satellite and Hybrid maps
-    google_satellite = folium.TileLayer( tiles='https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', attr='Google Satellite', name='Google Satellite', overlay=False,)
-    google_hybrid = folium.TileLayer( tiles='https://mt1.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', attr='Google Hybrid', name='Google Hybrid', overlay=False, )
-    
-    # Add Google Satellite and Hybrid maps to the layer control
-    layer_control = folium.LayerControl().add_to(m)
-    google_satellite.add_to(layer_control)
-    google_hybrid.add_to(layer_control)
-    
     Draw(export = False, draw_options={ "polygon" : False, "polyline" : False, "circle" : False, "marker" : False, "circlemarker" : False},edit_options=False).add_to(m)
-    polygon_coordinates = st_folium(m, width=800, height=500)
-
-    option = st.selectbox('Please select the month of sowing : ', 
-('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'))
+    polygon_coordinates = st_folium(m, width=800, height=500)   
+      
+    option = st.selectbox('Please select the month of sowing : ', ('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'))
 
     submitted = st.form_submit_button("Submit")
     if submitted:
