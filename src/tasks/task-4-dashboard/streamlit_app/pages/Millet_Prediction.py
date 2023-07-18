@@ -163,34 +163,24 @@ def main():
 
   with st.form("my_form"):
     m = folium.Map()
-
-    # Add base map using TileLayer
-    folium.TileLayer('OpenStreetMap').add_to(m)  # Default base map
-
-    # Add additional base maps
-    folium.TileLayer('CartoDB positron').add_to(m)
-    folium.TileLayer('CartoDB dark_matter').add_to(m)
-    folium.TileLayer('Stamen Terrain').add_to(m)
-    folium.TileLayer('Stamen Toner').add_to(m)
-    folium.TileLayer('Stamen Watercolor').add_to(m)
-
-    # Define base map names and layers
+    # Define base map names and corresponding TileLayers
     base_map_names = ['OpenStreetMap', 'CartoDB positron', 'CartoDB dark_matter', 'Stamen Terrain', 'Stamen Toner', 'Stamen Watercolor']
-    base_map_layers = {
-    'OpenStreetMap': m,
-    'CartoDB positron': folium.TileLayer('CartoDB positron'),
-    'CartoDB dark_matter': folium.TileLayer('CartoDB dark_matter'),
-    'Stamen Terrain': folium.TileLayer('Stamen Terrain'),
-    'Stamen Toner': folium.TileLayer('Stamen Toner'),
-    'Stamen Watercolor': folium.TileLayer('Stamen Watercolor')
-    }
+    base_maps = [ folium.TileLayer('OpenStreetMap'),
+    folium.TileLayer('CartoDB positron'),
+    folium.TileLayer('CartoDB dark_matter'),
+    folium.TileLayer('Stamen Terrain'),
+    folium.TileLayer('Stamen Toner'),
+    folium.TileLayer('Stamen Watercolor') ]
 
-    # Create a sidebar with base map selection
-    st.sidebar.markdown("### Base Maps")
-    selected_base_map = st.sidebar.selectbox('Select a base map', base_map_names)
+    # Add default base map
+    base_maps[0].add_to(m)
 
-    # Update the map object based on the selected base map
-    m = base_map_layers[selected_base_map]
+    # Create a layer control
+    layer_control = folium.LayerControl().add_to(m)
+
+    # Add base maps to the layer control
+    for base_map in base_maps:
+      base_map.add_to(layer_control)
 
     Draw(export = False, draw_options={ "polygon" : False, "polyline" : False, "circle" : False, "marker" : False, "circlemarker" : False},edit_options=False).add_to(m)
     polygon_coordinates = st_folium(m, width=800, height=500)   
