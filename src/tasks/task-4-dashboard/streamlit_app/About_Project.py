@@ -18,6 +18,8 @@ def active_contributors():
   st.markdown('• <a href="https://www.linkedin.com/in/soumyardas90/">Soumya Ranjan Das</a>', unsafe_allow_html=True)
   st.markdown('• <a href="https://www.linkedin.com/in/archishasrivastava/">Archisha Srivastava</a>', unsafe_allow_html=True)
   st.markdown('• <a href="https://www.linkedin.com/in/rajuyadavk/">Raju Kunchala</a>', unsafe_allow_html=True)
+  st.markdown('• <a href="https://www.linkedin.com/in/piyush-sharma-242b95205">Piyush Sharma</a>', unsafe_allow_html=True)
+  st.markdown('• <a href="http://www.linkedin.com/in/aarudhravi">Aarudh Ravi</a>', unsafe_allow_html=True)
   st.subheader('PROJECT MANAGER')
   st.markdown('• <a href="https://www.linkedin.com/in/chancy-shah-671787119/">Chancy Shah</a>', unsafe_allow_html=True)
 
