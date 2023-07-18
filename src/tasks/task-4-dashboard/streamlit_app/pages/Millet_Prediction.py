@@ -162,9 +162,10 @@ def main():
   df = pd.DataFrame(data)
 
   with st.form("my_form"):
-    m = folium.Map()
+    m = folium.Map(width=800, height=500)
     Draw(export = False, draw_options={ "polygon" : False, "polyline" : False, "circle" : False, "marker" : False, "circlemarker" : False},edit_options=False).add_to(m)
     polygon_coordinates = st_folium(m, width=800, height=500)
+    
     option = st.selectbox('Please select the month of sowing : ', ('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'))
 
     submitted = st.form_submit_button("Submit")
