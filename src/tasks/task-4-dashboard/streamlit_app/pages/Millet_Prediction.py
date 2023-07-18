@@ -170,9 +170,11 @@ def main():
     folium.TileLayer('CartoDB positron').add_to(m)
     folium.TileLayer('CartoDB dark_matter').add_to(m)
     folium.TileLayer('Stamen Terrain').add_to(m)
-    folium.TileLayer('Stamen Toner').add_to(m)
-    folium.TileLayer('Stamen Watercolor').add_to(m)
 
+
+    # Add LayerControl to the map
+    folium.LayerControl().add_to(m)
+    
     Draw(export = False, draw_options={ "polygon" : False, "polyline" : False, "circle" : False, "marker" : False, "circlemarker" : False},edit_options=False).add_to(m)
     polygon_coordinates = st_folium(m, width=800, height=500)   
     
