@@ -26,7 +26,7 @@ def active_contributors():
 
 def about_project():
   ABOUT_PROJECT_CONTENT="""
-#####  This project is initiated by the Omdena Kutch, India Chapter to solve Real World Problems.
+#####  This Project is initiated by the Omdena Kutch, India Chapter to Solve Real World Problems.
 
 ### Project background
 Millets are a group of small-seeded grasses that have been cultivated for thousands of years as a staple food source in many parts of the world, including India, Africa, and China. They are highly nutritious and rich in protein, fiber, vitamins, and minerals, making them an important food crop for human consumption.
@@ -45,7 +45,6 @@ The problem at hand is that despite the numerous benefits of millet as a nutriti
 To tackle this problem, we aim to leverage advanced technology and innovative solutions to support farmers in growing millets and bridge the gaps in the market. We need to raise awareness among consumers about the nutritional and environmental benefits of millet and create demand for millet-based products. By doing so, we can help to promote sustainable agriculture, improve food security, and contribute to a healthier planet.
 
 ### Project goals
-The project's goal is to: - 
 + Develop a machine-learning algorithm to suggest the best millet crop for cultivation in farmer's agricultural fields.
 + Take into account various environmental factors, such as soil moisture, temperature, and precipitation, using satellite imagery and geospatial technology.
 + Provide farmers with data-driven insights to help them make informed decisions about crop selection.
