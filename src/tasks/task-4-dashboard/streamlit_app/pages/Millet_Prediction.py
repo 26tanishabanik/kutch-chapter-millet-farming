@@ -14,6 +14,7 @@ import calendar
 import pickle
 from PIL import Image
 from tqdm import tqdm
+import time
 
 def get_start_end_date(month_text):
   date_time = f'{date.today().year}-{month_text}-01'
