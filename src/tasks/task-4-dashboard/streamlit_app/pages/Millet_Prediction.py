@@ -190,7 +190,7 @@ def main():
             st.subheader(f'**Name of Millet :** {row["Name of Millet"]}')
             col1, col2, col3 = st.columns(3)
             with col1:
-              image = Image.open(f'D:/Omdena-Kutch/Millet_Farming/kutch-chapter-millet-farming-main/streamlit_app/images/{row["Millet Pic"]}')
+              image = Image.open(f'src/tasks/task-4-dashboard/streamlit_app/images/{row["Millet Pic"]}')
               st.image(image ,width=200)
               print(f'D:/Omdena-Kutch/Millet_Farming/kutch-chapter-millet-farming-main/streamlit_app/images/{row["Millet Pic"]}')
 
