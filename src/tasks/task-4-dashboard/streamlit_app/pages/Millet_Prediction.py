@@ -196,11 +196,11 @@ def main():
             time.sleep(0.5)
 
             # Check if prediction result is available
-            if i == 50:
+            if i == 75:
                 prediction_result=model_predict(start_date, end_date, polygon_coordinates["last_active_drawing"]["geometry"]["coordinates"])[0]
                 progress_bar.progress(100)
             else:
-                progress_bar.progress(i + 1)
+                progress_bar.progress(i + 2)
         
         status_text.empty()
         progress_bar.empty()
