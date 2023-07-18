@@ -156,6 +156,7 @@ def model_predict(start_date, end_date, roi):
 })
   #prediction_result=model.predict(new_data)
   #return prediction_result
+  prediction_result = predict_with_progress_bar(new_data)
 
 def predict_with_progress_bar(model, new_data):
     prediction_results = []
@@ -168,8 +169,6 @@ def predict_with_progress_bar(model, new_data):
             pbar.update(1)
 
     return prediction_results
-
-prediction_result = predict_with_progress_bar(new_data)
 
 def main():
   main_header()
