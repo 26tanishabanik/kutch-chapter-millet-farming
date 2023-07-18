@@ -51,7 +51,7 @@ HEADER_STYLE=f"""<style>
             background-position: center;
             }}
             #{get_page_title_id()}{{
-            height: 150px;
+            height: 250px;
             }}
             #{get_page_title_id()} > div {{
             bottom: 1%;
