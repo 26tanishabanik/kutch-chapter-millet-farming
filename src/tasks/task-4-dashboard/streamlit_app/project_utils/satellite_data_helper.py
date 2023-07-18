@@ -131,7 +131,7 @@ def get_soil_salinity(start_date, end_date, roi):
   dataset.close()
   return min_value, max_value
 
-[ee_keys]
+#[ee_keys]
 type = "service_account"
 project_id = "ee-chancy"
 private_key_id = "4589e4712730d63b599752e77de6780ac8596768"
