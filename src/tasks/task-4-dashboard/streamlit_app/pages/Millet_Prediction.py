@@ -200,7 +200,7 @@ def main():
                 prediction_result=model_predict(start_date, end_date, polygon_coordinates["last_active_drawing"]["geometry"]["coordinates"])[0]
                 progress_bar.progress(100)
             else:
-                progress_bar.progress(i + 2)
+                progress_bar.progress(i + 1)
         
         status_text.empty()
         progress_bar.empty()
