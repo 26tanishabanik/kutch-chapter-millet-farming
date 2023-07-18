@@ -163,6 +163,7 @@ def main():
 
   with st.form("my_form"):
     m = folium.Map()
+
     # Add base map using TileLayer
     folium.TileLayer('OpenStreetMap').add_to(m)  # Default base map
 
@@ -173,16 +174,23 @@ def main():
     folium.TileLayer('Stamen Toner').add_to(m)
     folium.TileLayer('Stamen Watercolor').add_to(m)
 
-    # Define base map names
+    # Define base map names and layers
     base_map_names = ['OpenStreetMap', 'CartoDB positron', 'CartoDB dark_matter', 'Stamen Terrain', 'Stamen Toner', 'Stamen Watercolor']
+    base_map_layers = {
+    'OpenStreetMap': m,
+    'CartoDB positron': folium.TileLayer('CartoDB positron'),
+    'CartoDB dark_matter': folium.TileLayer('CartoDB dark_matter'),
+    'Stamen Terrain': folium.TileLayer('Stamen Terrain'),
+    'Stamen Toner': folium.TileLayer('Stamen Toner'),
+    'Stamen Watercolor': folium.TileLayer('Stamen Watercolor')
+    }
 
     # Create a sidebar with base map selection
+    st.sidebar.markdown("### Base Maps")
     selected_base_map = st.sidebar.selectbox('Select a base map', base_map_names)
 
-    # Set the selected base map as active
-    for layer in m.layers:
-      if layer.name == selected_base_map:
-        layer.add_to(m)
+    # Update the map object based on the selected base map
+    m = base_map_layers[selected_base_map]
 
     Draw(export = False, draw_options={ "polygon" : False, "polyline" : False, "circle" : False, "marker" : False, "circlemarker" : False},edit_options=False).add_to(m)
     polygon_coordinates = st_folium(m, width=800, height=500)   
