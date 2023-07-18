@@ -6,6 +6,8 @@ from project_utils.page_layout_helper import set_page_settings, get_page_title, 
 import ee
 import geemap
 
+st.set_page_config(layout="wide")
+
 def active_contributors():
   st.subheader('COLLABORATORS')
   st.markdown('• <a href="https://www.linkedin.com/in/tanisha-banik-04b511173/">Tanisha Banik</a>', unsafe_allow_html=True)
