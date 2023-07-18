@@ -158,7 +158,7 @@ def model_predict(start_date, end_date, roi):
   #return prediction_result
   prediction_result = predict_with_progress_bar(new_data)
 
-def predict_with_progress_bar(model, new_data):
+def predict_with_progress_bar(new_data):
     prediction_results = []
     total_iterations = len(new_data)
 
