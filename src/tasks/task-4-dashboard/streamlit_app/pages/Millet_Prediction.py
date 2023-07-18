@@ -1,4 +1,3 @@
-
 import os
 import base64
 import pandas as pd
@@ -14,6 +13,7 @@ import calendar
 import pickle
 from PIL import Image
 from tqdm import tqdm
+import time
 
 def get_start_end_date(month_text):
   date_time = f'{date.today().year}-{month_text}-01'
@@ -154,29 +154,34 @@ def model_predict(start_date, end_date, roi):
     'Nia- cin (mg)': [1.57],
     'Price (US$ / Kg)': [17.24]
 })
-  #prediction_result=model.predict(new_data)
-  #return prediction_result
-
-def predict_with_progress_bar(model, new_data):
-    prediction_results = []
-    total_iterations = len(new_data)
-
-    with tqdm(total=total_iterations, desc="Predicting") as pbar:
-        for data in new_data:
-            prediction = model.predict(data)
-            prediction_results.append(prediction)
-            pbar.update(1)
-
-    return prediction_results
-
-prediction_result = predict_with_progress_bar(model, new_data)
+  prediction_result=model.predict(new_data)
+  return prediction_result
 
 def main():
   main_header()
   df = pd.DataFrame(data)
 
   with st.form("my_form"):
-    m = folium.Map()
+    m = folium.Map(width=800, height=600)
+    # Add base maps using TileLayer
+    folium.TileLayer('OpenStreetMap').add_to(m)  # Default base map
+
+    # Add additional base maps
+    folium.TileLayer('CartoDB positron').add_to(m)
+    folium.TileLayer('CartoDB dark_matter').add_to(m)
+    folium.TileLayer('Stamen Terrain').add_to(m)
+    folium.TileLayer('Stamen Toner').add_to(m)
+    folium.TileLayer('Stamen Watercolor').add_to(m)
+
+    # Define Google Satellite and Hybrid maps
+    google_satellite = folium.TileLayer( tiles='https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', attr='Google Satellite', name='Google Satellite', overlay=False,)
+    google_hybrid = folium.TileLayer( tiles='https://mt1.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', attr='Google Hybrid', name='Google Hybrid', overlay=False, )
+    
+    # Add Google Satellite and Hybrid maps to the layer control
+    layer_control = folium.LayerControl().add_to(m)
+    google_satellite.add_to(layer_control)
+    google_hybrid.add_to(layer_control)
+    
     Draw(export = False, draw_options={ "polygon" : False, "polyline" : False, "circle" : False, "marker" : False, "circlemarker" : False},edit_options=False).add_to(m)
     polygon_coordinates = st_folium(m, width=800, height=500)
 
@@ -197,7 +202,27 @@ def main():
         #st.write(str(polygon_coordinates["last_active_drawing"]["geometry"]["coordinates"]))
         #st.write(help(polygon_coordinates))
         #st.table(df)
-        prediction_result=model_predict(start_date, end_date, polygon_coordinates["last_active_drawing"]["geometry"]["coordinates"])[0]
+        #prediction_result=model_predict(start_date, end_date, polygon_coordinates["last_active_drawing"]["geometry"]["coordinates"])[0]
+        
+        progress_bar = st.progress(0)
+        status_text = st.empty()
+
+        with status_text:
+            status_text.text("Predicting... Please wait.")
+          
+        prediction_result = None
+        for i in tqdm(range(100), desc="Progress", leave=False):
+            # Simulating some time-consuming operation
+            time.sleep(0.1)
+
+            # Check if prediction result is available
+            if i == 50:
+                prediction_result=model_predict(start_date, end_date, polygon_coordinates["last_active_drawing"]["geometry"]["coordinates"])[0]
+                progress_bar.progress(100)
+            else:
+                progress_bar.progress(i + 1)
+        
+        status_text.empty()
         #st.write(prediction_result)
         df_new=df.loc[df["Full Name of Millet"]==prediction_result]       
         for index,row in df_new.iterrows():

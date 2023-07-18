@@ -51,7 +51,7 @@ HEADER_STYLE=f"""<style>
             background-position: center;
             }}
             #{get_page_title_id()}{{
-            height: 250px;
+            height: 150px;
             }}
             #{get_page_title_id()} > div {{
             bottom: 1%;
@@ -82,7 +82,7 @@ def main_header():
   with st.container():
       left_side, right_side = st.columns([1,2], gap="small")
       with left_side:
-          st.image(PROFILE_IMAGE, width=300)          
+          st.image(PROFILE_IMAGE, width=250,use_column_width ="always")          
       with right_side:
           st.markdown(HEADER_STYLE, unsafe_allow_html=True)
           st.title(PAGE_TITLE)
