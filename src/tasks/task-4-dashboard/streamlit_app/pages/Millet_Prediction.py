@@ -203,6 +203,7 @@ def main():
                 progress_bar.progress(i + 1)
         
         status_text.empty()
+        progress_bar.empty()
         #st.write(prediction_result)
         df_new=df.loc[df["Full Name of Millet"]==prediction_result]       
         for index,row in df_new.iterrows():
