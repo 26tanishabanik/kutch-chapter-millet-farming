@@ -162,8 +162,10 @@ def main():
   df = pd.DataFrame(data)
 
   with st.form("my_form"):
-    m = folium.Map(width=800, height=600)
-    # Add base maps using TileLayer
+    m = folium.Map()
+    Draw(export = False, draw_options={ "polygon" : False, "polyline" : False, "circle" : False, "marker" : False, "circlemarker" : False},edit_options=False).add_to(m)
+    polygon_coordinates = st_folium(m, width=800, height=500)
+     # Add base maps using TileLayer
     folium.TileLayer('OpenStreetMap').add_to(m)  # Default base map
 
     # Add additional base maps
@@ -182,9 +184,6 @@ def main():
     google_satellite.add_to(layer_control)
     google_hybrid.add_to(layer_control)
     
-    Draw(export = False, draw_options={ "polygon" : False, "polyline" : False, "circle" : False, "marker" : False, "circlemarker" : False},edit_options=False).add_to(m)
-    polygon_coordinates = st_folium(m, width=800, height=500)
-
     option = st.selectbox('Please select the month of sowing : ', 
 ('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'))
 
