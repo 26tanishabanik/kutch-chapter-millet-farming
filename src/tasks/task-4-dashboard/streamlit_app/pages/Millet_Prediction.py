@@ -175,16 +175,14 @@ def main():
     # Add default base map
     base_maps[0].add_to(m)
 
+    Draw(export = False, draw_options={ "polygon" : False, "polyline" : False, "circle" : False, "marker" : False, "circlemarker" : False},edit_options=False).add_to(m)
+    polygon_coordinates = st_folium(m, width=800, height=500)   
     # Create a layer control
     layer_control = folium.LayerControl().add_to(m)
 
     # Add base maps to the layer control
     for base_map in base_maps:
       base_map.add_to(layer_control)
-
-    Draw(export = False, draw_options={ "polygon" : False, "polyline" : False, "circle" : False, "marker" : False, "circlemarker" : False},edit_options=False).add_to(m)
-    polygon_coordinates = st_folium(m, width=800, height=500)   
-    
     option = st.selectbox('Please select the month of sowing : ', ('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'))
 
     submitted = st.form_submit_button("Submit")
