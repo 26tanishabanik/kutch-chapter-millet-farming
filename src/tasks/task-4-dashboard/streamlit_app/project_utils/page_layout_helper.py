@@ -82,7 +82,7 @@ def main_header():
   with st.container():
       left_side, right_side = st.columns([1,2], gap="small")
       with left_side:
-          st.image(PROFILE_IMAGE, width=250,use_column_width ="auto")          
+          st.image(PROFILE_IMAGE, width=250,use_column_width ="always")          
       with right_side:
           st.markdown(HEADER_STYLE, unsafe_allow_html=True)
           st.title(PAGE_TITLE)
