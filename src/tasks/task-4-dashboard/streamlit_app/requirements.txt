@@ -7,3 +7,4 @@ shapely
 geemap
 Pillow
 google-api-python-client
+google-auth
