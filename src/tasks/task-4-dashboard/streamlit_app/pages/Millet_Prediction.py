@@ -1,4 +1,3 @@
-
 import os
 import base64
 import pandas as pd
@@ -193,7 +192,7 @@ def main():
             status_text.text("Predicting... Please wait.")
           
         prediction_result = None
-        for i in tqdm(range(100), desc="Progress"):
+        for i in tqdm(range(100), desc="Progress", leave=False):
             # Simulating some time-consuming operation
             time.sleep(0.1)
 
