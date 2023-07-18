@@ -162,7 +162,7 @@ def main():
   df = pd.DataFrame(data)
 
   with st.form("my_form"):
-    m = folium.Map()
+    m = folium.Map(width=800, height=600)
     # Add base maps using TileLayer
     folium.TileLayer('OpenStreetMap').add_to(m)  # Default base map
 
