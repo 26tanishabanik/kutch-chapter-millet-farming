@@ -71,7 +71,7 @@ def main():
   set_page_settings()
   main_header()
   about_project_style()
-  project_tab, team_tab = st.tabs(["  **About Project** ", "  **Active Team Contributors**  "])
+  project_tab, team_tab = st.tabs(["  **About Project** ", "  **Active Contributors**  "])
 
   with project_tab:
     about_project()
