@@ -13,6 +13,7 @@ from dateutil import parser
 import calendar
 import pickle
 from PIL import Image
+from tqdm import tqdm
 
 def get_start_end_date(month_text):
   date_time = f'{date.today().year}-{month_text}-01'
@@ -153,9 +154,23 @@ def model_predict(start_date, end_date, roi):
     'Nia- cin (mg)': [1.57],
     'Price (US$ / Kg)': [17.24]
 })
-  prediction_result=model.predict(new_data)
-  return prediction_result
-  
+  #prediction_result=model.predict(new_data)
+  #return prediction_result
+
+def predict_with_progress_bar(model, new_data):
+    prediction_results = []
+    total_iterations = len(new_data)
+
+    with tqdm(total=total_iterations, desc="Predicting") as pbar:
+        for data in new_data:
+            prediction = model.predict(data)
+            prediction_results.append(prediction)
+            pbar.update(1)
+
+    return prediction_results
+
+prediction_result = predict_with_progress_bar(model, new_data)
+
 def main():
   main_header()
   df = pd.DataFrame(data)
