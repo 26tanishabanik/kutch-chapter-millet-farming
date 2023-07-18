@@ -8,25 +8,16 @@ import ee
 import geemap
 
 def active_contributors():
-  ACTIVE_CONTRIBUTORS_PAGE_CHAPTERLEAD='''
-| Chapter Name | Lead Name |
-|--|--|
-| Kutch India Chapter Leads | Chancy Shah |
-'''
-
-  ACTIVE_CONTRIBUTORS_PAGE_MEMBERS_LIST='''
-| Task Name | Active Contributors |
-|--|--|
-| Data Collection on Types of Millet and their Parameters | - |
-| Identity Satellites and Sensors to use | - |
-| AI Algorithms | - |
-| Dashboard | - |
-'''
-
-  with st.container():
-    st.markdown(ACTIVE_CONTRIBUTORS_PAGE_CHAPTERLEAD, unsafe_allow_html=True)
-    st.markdown("<br>", unsafe_allow_html=True)
-    st.markdown(ACTIVE_CONTRIBUTORS_PAGE_MEMBERS_LIST, unsafe_allow_html=True)
+  st.subheader('COLLABORATORS')
+  st.markdown('• <a href="https://www.linkedin.com/in/tanisha-banik-04b511173/">Tanisha Banik</a>', unsafe_allow_html=True)
+  st.markdown('• <a href="https://www.linkedin.com/in/arthanant">Arth Anant</a>', unsafe_allow_html=True)
+  st.markdown('• <a href="https://www.linkedin.com/in/crista-villatoro-2452a6129">Crista Villatoro</a>', unsafe_allow_html=True)
+  st.markdown('• <a href="https://linkedin.com/in/raviatkumar">Ravi Kumar M</a>', unsafe_allow_html=True)
+  st.markdown('• <a href="https://in.linkedin.com/in/priyanshu-mohanty-73347b1b6">Priyanshu Mohanty</a>', unsafe_allow_html=True)
+  st.markdown('• <a href="https://www.linkedin.com/in/vinod-c-81ab3366/">Vinod Cherian</a>', unsafe_allow_html=True)
+  st.markdown('• <a href="https://www.linkedin.com/in/soumyardas90/">Soumya Ranjan Das</a>', unsafe_allow_html=True)
+  st.subheader('PROJECT MANAGER')
+  st.markdown('• <a href="https://www.linkedin.com/in/chancy-shah-671787119/">Chancy Shah</a>', unsafe_allow_html=True)
 
 
 def about_project():
