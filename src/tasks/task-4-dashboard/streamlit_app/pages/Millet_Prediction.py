@@ -187,17 +187,24 @@ def main():
         #prediction_result=model_predict(start_date, end_date, polygon_coordinates["last_active_drawing"]["geometry"]["coordinates"])[0]
         
         progress_bar = st.progress(0)
-        
-        with st.empty():
-            for i in tqdm(range(100), desc="Progress"):
-                # Simulating some time-consuming operation
-                time.sleep(0.1)
+        status_text = st.empty()
 
-                # Check if prediction result is available
-                if i == 50:
-                    prediction_result=model_predict(start_date, end_date, polygon_coordinates["last_active_drawing"]["geometry"]["coordinates"])[0]
-                    break
+        with status_text:
+            status_text.text("Predicting... Please wait.")
+          
+        prediction_result = None
+        for i in tqdm(range(100), desc="Progress"):
+            # Simulating some time-consuming operation
+            time.sleep(0.1)
+
+            # Check if prediction result is available
+            if i == 50:
+                prediction_result=model_predict(start_date, end_date, polygon_coordinates["last_active_drawing"]["geometry"]["coordinates"])[0]
+                progress_bar.progress(100)
+            else:
                 progress_bar.progress(i + 1)
+        
+        status_text.empty()
         #st.write(prediction_result)
         df_new=df.loc[df["Full Name of Millet"]==prediction_result]       
         for index,row in df_new.iterrows():
