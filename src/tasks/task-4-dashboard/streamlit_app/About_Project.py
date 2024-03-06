@@ -1,4 +1,3 @@
-
 import streamlit as st
 from datetime import date
 import os
@@ -20,15 +19,21 @@ def active_contributors():
   st.markdown('• <a href="https://www.linkedin.com/in/rajuyadavk/">Raju Kunchala</a>', unsafe_allow_html=True)
   st.markdown('• <a href="https://www.linkedin.com/in/piyush-sharma-242b95205">Piyush Sharma</a>', unsafe_allow_html=True)
   st.markdown('• <a href="http://www.linkedin.com/in/aarudhravi">Aarudh Ravi</a>', unsafe_allow_html=True)
+  st.markdown('• <a href=#>Janani Selvaraj</a>', unsafe_allow_html=True)
+  st.markdown('• <a href="https://uk.linkedin.com/in/aakanksha-chouhan">Aakanksha</a>', unsafe_allow_html=True)
+  st.markdown('• <a href="http://www.linkedin.com/in/tsilavo-r">Tsilavo RAKOTO</a>', unsafe_allow_html=True)
+  st.markdown('• <a href="https://www.linkedin.com/in/tanishq-kolhatkar-4168a0209">Tanishq kolhatkar</a>', unsafe_allow_html=True)
+  st.markdown('• <a href="https://www.linkedin.com/mwlite/in/mallikarjun-jamadarkhani-950929101">Mallikarjun Jamadarkhani</a>', unsafe_allow_html=True)
+  st.markdown('• <a href=#>Pratik Dhungana</a>', unsafe_allow_html=True)
   st.subheader('PROJECT MANAGER')
   st.markdown('• <a href="https://www.linkedin.com/in/chancy-shah-671787119/">Chancy Shah</a>', unsafe_allow_html=True)
 
 
 def about_project():
   ABOUT_PROJECT_CONTENT="""
-#####  This project is initiated by the Omdena Kutch, India Chapter to solve Real World Problems.
+#####  This Project is initiated by the Omdena Kutch, India Chapter to Solve Real World Problems.
 
-### Project background
+### Project Background
 Millets are a group of small-seeded grasses that have been cultivated for thousands of years as a staple food source in many parts of the world, including India, Africa, and China. They are highly nutritious and rich in protein, fiber, vitamins, and minerals, making them an important food crop for human consumption.
 
 One of the key benefits of millets is their resilience to drought and other environmental stressors. They require less water and fertilizer than other crops such as wheat and rice, making them a more sustainable choice for farmers in areas with limited resources. They are also able to grow in a variety of soil types and can be grown in areas with low rainfall.
@@ -39,13 +44,12 @@ In addition to their nutritional and environmental benefits, millets have cultur
 
 Overall, the declaration of 2023 as the International Year of Millets highlights the importance of this crop in terms of both food security and sustainable agriculture. It is hoped that this will raise awareness about the nutritional and environmental benefits of millets and encourage their increased cultivation and consumption worldwide.
 
-### The problem
+### Problem Statement
 The problem at hand is that despite the numerous benefits of millet as a nutritious and sustainable crop, both consumers and farmers lack awareness of its advantages. As a result, millet production and demand in the market remain limited. The declaration of 2023 as the International Year of Millets (IYM2023) by the United Nations (UN) General Assembly provides an opportunity to raise awareness about the importance of millets. However, there is a need to address the gaps in knowledge and resources that prevent farmers from growing millet, as well as the lack of market demand for millet-based products.
 
 To tackle this problem, we aim to leverage advanced technology and innovative solutions to support farmers in growing millets and bridge the gaps in the market. We need to raise awareness among consumers about the nutritional and environmental benefits of millet and create demand for millet-based products. By doing so, we can help to promote sustainable agriculture, improve food security, and contribute to a healthier planet.
 
-### Project goals
-The project's goal is to: - 
+### Project Goals
 + Develop a machine-learning algorithm to suggest the best millet crop for cultivation in farmer's agricultural fields.
 + Take into account various environmental factors, such as soil moisture, temperature, and precipitation, using satellite imagery and geospatial technology.
 + Provide farmers with data-driven insights to help them make informed decisions about crop selection.
@@ -73,7 +77,7 @@ def main():
   set_page_settings()
   main_header()
   about_project_style()
-  project_tab, team_tab = st.tabs(["  **About Project** ", "  **Active Team Contributors**  "])
+  project_tab, team_tab = st.tabs(["  **About Project** ", "  **Active Contributors**  "])
 
   with project_tab:
     about_project()

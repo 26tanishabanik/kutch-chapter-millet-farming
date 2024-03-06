@@ -160,11 +160,11 @@ def model_predict(start_date, end_date, roi):
 def main():
   main_header()
   df = pd.DataFrame(data)
-
+  st.write("Select a small area using on the rectangle icon on the map to define the region for millet prediction.")
   with st.form("my_form"):
     m = folium.Map()
     Draw(export = False, draw_options={ "polygon" : False, "polyline" : False, "circle" : False, "marker" : False, "circlemarker" : False},edit_options=False).add_to(m)
-    polygon_coordinates = st_folium(m, width=800, height=1000)
+    polygon_coordinates = st_folium(m,width=1000, height=500)
     
     option = st.selectbox('Please select the month of sowing : ', ('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'))
 
@@ -193,16 +193,17 @@ def main():
         prediction_result = None
         for i in tqdm(range(100), desc="Progress", leave=False):
             # Simulating some time-consuming operation
-            time.sleep(0.1)
+            time.sleep(0.5)
 
             # Check if prediction result is available
-            if i == 50:
+            if i == 75:
                 prediction_result=model_predict(start_date, end_date, polygon_coordinates["last_active_drawing"]["geometry"]["coordinates"])[0]
                 progress_bar.progress(100)
             else:
                 progress_bar.progress(i + 1)
         
         status_text.empty()
+        progress_bar.empty()
         #st.write(prediction_result)
         df_new=df.loc[df["Full Name of Millet"]==prediction_result]       
         for index,row in df_new.iterrows():
